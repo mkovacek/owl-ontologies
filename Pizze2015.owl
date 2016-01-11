@@ -1,0 +1,1369 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#"
+     xml:base="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015">
+        <rdfs:comment rdf:datatype="&rdfs;Literal">Ontologija o pizzama</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaAsortimanIz -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaAsortimanIz">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Drzava"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizzeria"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#prodajePizzu"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+        </owl:propertyChainAxiom>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaSastojak"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeNadjevOd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaSastojak -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaSastojak">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaTijesto -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaTijesto">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TijestoZaPizzu"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaSastojak"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeTijestoOd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeNadjevOd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeNadjevOd">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeSastojakOd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeSastojakOd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeSastojakOd">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaSastojak"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeTijestoOd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeTijestoOd">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TijestoZaPizzu"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeSastojakOd"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Zacinjenost"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#prodajePizzu -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#prodajePizzu">
+        <rdfs:range rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OdredjenaPizza"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizzeria"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaCijenu -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaCijenu">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+        <rdfs:range rdf:resource="&xsd;decimal"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaKalorija -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaKalorija">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+        <rdfs:range rdf:resource="&xsd;integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Zacinjenost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#DebeloTijesto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#DebeloTijesto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TijestoZaPizzu"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TankoTijesto"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Drzava -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Drzava">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:oneOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VelikaBritanija"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Italija"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SAD"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Njemacka"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Francuska"/>
+                </owl:oneOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#LjutiNadjev -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#LjutiNadjev">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Zacinjenost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Nadjev4Sira -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Nadjev4Sira">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevCrvenaPaprika -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevCrvenaPaprika">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPaprika"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevGljive -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevGljive">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevGorgonzola -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevGorgonzola">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevIncuni -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevIncuni">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMorskiPlodovi"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevJalapenoPaprika -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevJalapenoPaprika">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPaprika"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKapari -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKapari">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKobasice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKobasice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMeso"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Srednje"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKozice -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKozice">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMorskiPlodovi"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevLuk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevLuk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Srednje"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMasline -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMasline">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMeso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMeso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMorskiPlodovi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMorskiPlodovi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Italija"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPaprika -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPaprika">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevParmezan -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevParmezan">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSalama -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSalama">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMeso"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Srednje"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSunka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSunka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMeso"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevTopljeniSir -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevTopljeniSir">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevTuna -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevTuna">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMorskiPlodovi"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SAD"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZacinjenoMeso -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZacinjenoMeso">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMeso"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZelenaPaprika -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZelenaPaprika">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPaprika"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NevegetarijanskaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NevegetarijanskaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VegetarijanskaPizza"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VegetarijanskaPizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NiskokaloricnaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NiskokaloricnaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaKalorija"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxExclusive rdf:datatype="&xsd;integer">400</xsd:maxExclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OdredjenaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OdredjenaPizza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OptimalnaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OptimalnaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Class>
+                        <owl:intersectionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+                                <owl:minQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:minQualifiedCardinality>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                                <owl:onClass rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+                                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:maxQualifiedCardinality>
+                            </owl:Restriction>
+                        </owl:intersectionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ParticijaVrijednosti -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ParticijaVrijednosti"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaTijesto"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TijestoZaPizzu"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaCijenu"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:onDatatype rdf:resource="&xsd;decimal"/>
+                        <owl:withRestrictions rdf:parseType="Collection">
+                            <rdf:Description>
+                                <xsd:minInclusive rdf:datatype="&xsd;decimal">22</xsd:minInclusive>
+                            </rdf:Description>
+                            <rdf:Description>
+                                <xsd:maxInclusive rdf:datatype="&xsd;decimal">40</xsd:maxInclusive>
+                            </rdf:Description>
+                        </owl:withRestrictions>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaKalorija"/>
+                <owl:someValuesFrom rdf:resource="&xsd;integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericana -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericana">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OdredjenaPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKobasice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SAD"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKobasice"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+                <owl:maxQualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:maxQualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericanaLjuta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericanaLjuta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OdredjenaPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SAD"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevJalapenoPaprika"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevJalapenoPaprika"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKobasice"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKobasice"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaMargherita -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaMargherita">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OdredjenaPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Italija"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">2</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaQuattroFormaggi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaQuattroFormaggi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OdredjenaPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Italija"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+                <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:qualifiedCardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaSoho -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaSoho">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#OdredjenaPizza"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMasline"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevParmezan"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaZemljuPorijekla"/>
+                <owl:hasValue rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VelikaBritanija"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevParmezan"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMasline"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizzeria -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizzeria"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SirnaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SirnaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Srednje -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Srednje">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Zacinjenost"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TankoTijesto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TankoTijesto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TijestoZaPizzu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TijestoZaPizzu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TijestoZaPizzu"/>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VegetarijanskaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VegetarijanskaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VisokokaloricnaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VisokokaloricnaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaKalorija"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="&xsd;integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="&xsd;integer">400</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ZacinjenaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ZacinjenaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#jeZacinjena"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ZacinjenaPizza1 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ZacinjenaPizza1">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#LjutiNadjev"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Zacinjenost -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Zacinjenost">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Srednje"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ParticijaVrijednosti"/>
+        <owl:disjointUnionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Srednje"/>
+        </owl:disjointUnionOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ZanimljivaPizza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#ZanimljivaPizza">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#imaNadjev"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanLjutaMala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanLjutaMala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericanaLjuta"/>
+        <imaKalorija rdf:datatype="&xsd;integer">410</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanaLjutaVelika -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanaLjutaVelika">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericanaLjuta"/>
+        <imaKalorija rdf:datatype="&xsd;integer">547</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanaMala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanaMala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericana"/>
+        <imaCijenu rdf:datatype="&xsd;decimal">23</imaCijenu>
+        <imaKalorija rdf:datatype="&xsd;integer">386</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanaVelika -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanaVelika">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericana"/>
+        <imaKalorija rdf:datatype="&xsd;integer">509</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Barok -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Barok">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizzeria"/>
+        <prodajePizzu rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#MargheritaMala"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Francuska -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Francuska">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Drzava"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Italija -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Italija">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Drzava"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#MargheritaMala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#MargheritaMala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaMargherita"/>
+        <imaKalorija rdf:datatype="&xsd;integer">263</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#MargheritaVelika -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#MargheritaVelika">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaMargherita"/>
+        <imaKalorija rdf:datatype="&xsd;integer">395</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Njemacka -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Njemacka">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Drzava"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#QuattroFormaggiMala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#QuattroFormaggiMala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaQuattroFormaggi"/>
+        <imaKalorija rdf:datatype="&xsd;integer">542</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#QuattroFormaggiVelika -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#QuattroFormaggiVelika">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaQuattroFormaggi"/>
+        <imaKalorija rdf:datatype="&xsd;integer">723</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SAD -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SAD">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Drzava"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SohoMala -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SohoMala">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaSoho"/>
+        <imaKalorija rdf:datatype="&xsd;integer">330</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SohoVelika -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SohoVelika">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaSoho"/>
+        <imaKalorija rdf:datatype="&xsd;integer">495</imaKalorija>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Tulipan -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Tulipan">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizzeria"/>
+        <prodajePizzu rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#AmericanaMala"/>
+        <prodajePizzu rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#SohoMala"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VelikaBritanija -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#VelikaBritanija">
+        <rdf:type rdf:resource="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Drzava"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Blago"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Ljuto"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Srednje"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZaPizzu"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Pizza"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#TijestoZaPizzu"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKobasice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSalama"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSunka"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZacinjenoMeso"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevGljive"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKapari"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevLuk"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMasline"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPaprika"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevRajcica"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevCrvenaPaprika"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevJalapenoPaprika"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevZelenaPaprika"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMeso"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMorskiPlodovi"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevPovrce"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevSir"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#Nadjev4Sira"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevGorgonzola"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevMozzarella"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevParmezan"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevTopljeniSir"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericana"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaAmericanaLjuta"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaMargherita"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaQuattroFormaggi"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#PizzaSoho"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevIncuni"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevKozice"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/sandra/ontologies/2015/11/Pizze2015#NadjevTuna"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
+
